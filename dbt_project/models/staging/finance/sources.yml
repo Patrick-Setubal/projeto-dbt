@@ -1,0 +1,48 @@
+version: 2
+
+sources:
+  - name: finance
+    description: "Dados brutos do sistema financeiro da empresa"
+    schema: data_set_financial
+    loader: bigquery
+    loader_at_field: data_carga
+    meta:
+      owner: "Data Team Finance"
+    freshness:
+      warn_after: {count: 1, period: day}
+      error_after: {count: 2, period: day}
+    
+    tables:
+      - name: dados_financeiros
+        description: "Tabela com os lancamentos financeiro da empresa"
+        columns: 
+        - name: nome
+          description: "Nome do lançamento financeiro"
+        - name: data
+          description: "Data em que o lançamento foi registrado"
+        - name: valor
+          description: "Valor previsto ou planejado do lançamento"
+        - name: status
+          description: "Status atual do lançamento"
+        - name: banco
+          description: "Instituição bancária associada ao lançamento"
+        - name: destino
+          description: "Conta ou local para onde o valor será transferido ou destinado"
+        - name: responsavel
+          description: "Pessoa responsável pelo lançamento ou pela despesa"
+        - name: tipo
+          description: "Tipo de lançamento"
+        - name: valor_real
+          description: "Valor efetivamente pago ou recebido"
+        - name: categoria
+          description: "Categoria do lançamento"
+        - name: mes
+          description: "Mês de referência do lançamento"
+        - name: id
+          description: "ID do lançamento"
+          tests:
+            - not-null
+
+
+
+
