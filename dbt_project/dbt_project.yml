@@ -32,3 +32,9 @@ models:                 # Configurações para cada modelo
       schema: marts
       materialized: table
       tags: ['marts']
+
+seeds:
+  dbt_project:
+    schema: seeds
+    materialized: seed
+    tags: ['seeds']

@@ -4,8 +4,6 @@ sources:
   - name: finance
     description: "Dados brutos do sistema financeiro da empresa"
     schema: data_set_financial
-    loader: bigquery
-    loader_at_field: data_carga
     meta:
       owner: "Data Team Finance"
     freshness:
