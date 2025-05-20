@@ -1,6 +1,6 @@
-config (
-    tag = ['comercial'] 
-)
+{{ config(
+    tags = ['comercial']
+) }}
 
 with orders as (
     select 

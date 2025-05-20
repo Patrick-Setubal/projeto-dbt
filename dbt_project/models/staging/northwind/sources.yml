@@ -10,7 +10,7 @@ sources:
         description: "Tabela com os lancamentos financeiro da empresa"
         columns: 
           - name: order_id
-            testes:
+            tests:
               - unique
               - not_null
           - name: customer_id

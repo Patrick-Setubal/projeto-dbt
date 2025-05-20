@@ -39,7 +39,7 @@ sources:
         - name: id
           description: "ID do lançamento"
           tests:
-            - not-null
+            - not_null
 
 
 

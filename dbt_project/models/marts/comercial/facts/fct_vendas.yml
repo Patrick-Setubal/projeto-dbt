@@ -1,0 +1,20 @@
+version: 2
+
+model:
+  - name: fct_vendas
+    description: "Fato venda da empresa"
+
+    columns:
+      - name: mes
+        description: "Mês da venda"
+        tests:
+          - not_null
+          - accepted_values:
+            values: ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"]
+      
+      - name: ano
+        description: "Ano da venda"
+        tests:
+          - not_null
+
+
