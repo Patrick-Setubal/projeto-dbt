@@ -16,6 +16,15 @@ clean-targets:          # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+
+# Exemplos de Variáveis
+
+vars:
+  ambiente: 'desenvolvimento'
+  data_minima: '2023-01-01'
+  schema_nome: 'desenvolvimento_schema'
+
+
 models:                 # Configurações para cada modelo
   dbt_project:
     
@@ -32,3 +41,14 @@ models:                 # Configurações para cada modelo
       schema: marts
       materialized: table
       tags: ['marts']
+
+seeds:
+  dbt_project:
+    schema: seeds
+    materialized: seed
+    tags: ['seeds']
+  
+snapshots:
+  dbt_project:
+    tags: ['snapshots']
+    schema: snapshots

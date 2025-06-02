@@ -1,0 +1,155 @@
+version: 2
+
+sources:
+  - name: ecomerce
+    description: "Dados da nossa loja de ecomerce"
+    schema: dbt_dw_raw
+    loader: bigquery
+
+    tables:
+      - name: avaliacoes
+        columns: 
+          - name: cliente_id
+            description: "Verifica se o cliente_id é único"
+            data_tests:
+              - not_null
+                
+          - name: produto_id
+            description: "Verifica se o produto_id é único"
+            data_tests:
+              - not_null
+
+          - name: nota
+            description: "Verifica se a nota é única"
+            
+          - name: comentario
+            description: "Verifica se o comentario é único"
+
+          - name: data_avaliacao
+            description: "Verifica se a data_avaliacao é única"
+
+      - name: carrinho
+        columns:
+          - name: cliente_id
+            description: "Verifica se o cliente_id é único"
+            data_tests:
+              - not_null
+          - name: produto_id
+            description: "Verifica se o produto_id é único"
+            data_tests:
+              - not_null
+          - name: data_carrinho
+            description: "Verifica se a data_carrinho é única"
+          - name: produto_id
+            description: "Verifica se o produto_id é único"
+          - name: quantidade
+            description: "Verifica se a quantidade é única"
+          - name: data_adicionado
+            description: "Verifica se a data_adicionado é única"
+            
+      - name: categorias
+        columns:
+          - name: id
+            description: "Verifica se o id é único"
+            data_tests:
+              - not_null
+              - unique
+          - name: nome
+            description: "Verifica se o nome é único"
+
+      - name: clientes
+        description: "Verifica se o cliente_id é único"
+        columns:
+          - name: id
+            description: "Verifica se o id é único"
+            data_tests:
+              - not_null
+              - unique
+          - name: nome
+            description: "Verifica se o nome é único"
+          - name: email
+            description: "Verifica se o email é único"
+            data_tests:
+              - valid_email
+          - name: telefone
+            description: "Verifica se o telefone é único"
+          - name: data_registro
+            description: "Verifica se a data_registro é única"
+
+      - name: itens_pedidos
+        columns: 
+          - name: pedido_id
+            description: "Verifica se o pedido_id é único"
+          - name: produto_id
+            description: "Verifica se o produto_id é único"
+          - name: quantidade
+            description: "Verifica se a quantidade é única"
+          - name: preco_unitario
+            description: "Verifica se o preco_unitario é único"
+          - name: subtotal
+            description: "Verifica se o subtotal é único"
+
+      - name: pagamentos
+        columns:
+          - name: id
+            description: "Verifica se o id é único"
+            data_tests:
+              - not_null
+              - unique
+          - name: pedido_id
+            description: "Verifica se o pedido_id é único"
+          - name: valor
+            description: "Verifica se o valor é único"
+          - name: metodo
+            description: "Verifica se o metodo é único"
+          - name: status
+            description: "Verifica se o status é único"
+          - name: data_pagamento
+            description: "Verifica se a data_pagamento é única"
+
+      - name: pedidos
+        columns:
+          - name: id
+            description: "Verifica se o id é único"
+            data_tests:
+              - not_null
+              - unique
+          - name: cliente_id
+            description: "Verifica se o cliente_id é único"
+            data_tests:
+              - not_null
+          - name: endereco_id
+            description: "Verifica se o endereco_id é único"
+            data_tests:
+              - not_null
+          - name: data_pedido
+            description: "Verifica se a data_pedido é única"
+          - name: status
+            description: "Verifica se o status é único"
+
+      - name: produtos
+        columns:
+          - name: id
+            description: "Verifica se o id é único"
+            data_tests:
+              - not_null
+              - unique
+          - name: nome
+            description: "Verifica se o nome é único"
+          - name: descricao
+            description: "Verifica se a descricao é única"
+          - name: categoria_id
+            description: "Verifica se o categoria_id é único"
+            data_tests:
+              - not_null
+          - name: preco   
+            description: "Verifica se o preco é único"
+          - name: marca 
+            description: "Verifica se o marca é único"
+          - name: estoque
+            description: "Verifica se o estoque é único"
+          - name: data_cadastro
+            description: "Verifica se a data_cadastro é única"
+
+
+
