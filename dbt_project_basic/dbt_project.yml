@@ -16,28 +16,22 @@ clean-targets:
 
 models:
   dbt_project_basic:
-
     staging:
       schema: stg
       materialized: table
-      tags: '[staging]'
+      tags: ['staging']
 
     intermediate:
       schema: int
       materialized: ephemeral
-      tags: '[intermediate]'
+      tags: ['intermediate']
 
     marts:
       schema: marts
       materialized: table
-      tags: '[marts]'
+      tags: ['marts']
 
 seeds:
   dbt_project_basic:
     schema: raw
-    tags: '[seeds]'
-      
-
-
-
-
+    tags: ['seeds']

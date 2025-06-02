@@ -11,13 +11,13 @@ sources:
         columns: 
           - name: cliente_id
             description: "Verifica se o cliente_id é único"
-            data_test:
-              - name: not_null
+            data_tests:
+              - not_null
                 
           - name: produto_id
             description: "Verifica se o produto_id é único"
-            data_test:
-              - name: not_null
+            data_tests:
+              - not_null
 
           - name: nota
             description: "Verifica se a nota é única"
@@ -32,12 +32,12 @@ sources:
         columns:
           - name: cliente_id
             description: "Verifica se o cliente_id é único"
-            data_test:
-              - name: not_null
+            data_tests:
+              - not_null
           - name: produto_id
             description: "Verifica se o produto_id é único"
-            data_test:
-              - name: not_null
+            data_tests:
+              - not_null
           - name: data_carrinho
             description: "Verifica se a data_carrinho é única"
           - name: produto_id
@@ -51,9 +51,9 @@ sources:
         columns:
           - name: id
             description: "Verifica se o id é único"
-            data_test:
-              - name: not_null
-              - name: unique
+            data_tests:
+              - not_null
+              - unique
           - name: nome
             description: "Verifica se o nome é único"
 
@@ -62,13 +62,15 @@ sources:
         columns:
           - name: id
             description: "Verifica se o id é único"
-            data_test:
-              - name: not_null
-              - name: unique
+            data_tests:
+              - not_null
+              - unique
           - name: nome
             description: "Verifica se o nome é único"
           - name: email
             description: "Verifica se o email é único"
+            data_tests:
+              - valid_email
           - name: telefone
             description: "Verifica se o telefone é único"
           - name: data_registro
@@ -76,10 +78,6 @@ sources:
 
       - name: itens_pedidos
         columns: 
-          - name: id
-            description: "Verifica se o id é único"
-            data_test:
-              - name: not_null
           - name: pedido_id
             description: "Verifica se o pedido_id é único"
           - name: produto_id
@@ -95,9 +93,9 @@ sources:
         columns:
           - name: id
             description: "Verifica se o id é único"
-            data_test:
-              - name: not_null
-              - name: unique
+            data_tests:
+              - not_null
+              - unique
           - name: pedido_id
             description: "Verifica se o pedido_id é único"
           - name: valor
@@ -113,17 +111,17 @@ sources:
         columns:
           - name: id
             description: "Verifica se o id é único"
-            data_test:
-              - name: not_null
-              - name: unique
+            data_tests:
+              - not_null
+              - unique
           - name: cliente_id
             description: "Verifica se o cliente_id é único"
-            data_test:
-              - name: not_null
+            data_tests:
+              - not_null
           - name: endereco_id
             description: "Verifica se o endereco_id é único"
-            data_test:
-              - name: not_null
+            data_tests:
+              - not_null
           - name: data_pedido
             description: "Verifica se a data_pedido é única"
           - name: status
@@ -133,17 +131,17 @@ sources:
         columns:
           - name: id
             description: "Verifica se o id é único"
-            data_test:
-              - name: not_null
-              - name: unique
+            data_tests:
+              - not_null
+              - unique
           - name: nome
             description: "Verifica se o nome é único"
           - name: descricao
             description: "Verifica se a descricao é única"
           - name: categoria_id
             description: "Verifica se o categoria_id é único"
-            data_test:
-              - name: not_null
+            data_tests:
+              - not_null
           - name: preco   
             description: "Verifica se o preco é único"
           - name: marca 
