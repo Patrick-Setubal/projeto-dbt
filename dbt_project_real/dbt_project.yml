@@ -1,0 +1,37 @@
+name: 'dbt_project_real'
+version: '1.0.0'
+
+profile: 'dbt_project_real'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  dbt_project_real:
+    staging:
+      schema: stg
+      materialized: table
+      tags: ['staging']
+
+    intermediate:
+      schema: int
+      materialized: ephemeral
+      tags: ['intermediate']
+
+    marts:
+      schema: marts
+      materialized: table
+      tags: ['marts']
+
+seeds:
+  dbt_project_real:
+    schema: raw
+    tags: ['seeds']
