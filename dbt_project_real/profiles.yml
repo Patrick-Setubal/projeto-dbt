@@ -1,0 +1,19 @@
+dbt_project_real:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: "{{ env_var('GCP_DEV_PROJECT') }}"
+      dataset: "{{ env_var('DBT_DEV_SCHEMA') }}"
+      keyfile: "{{ env_var('GCP_DEV_KEYFILE_PATH') }}"
+      threads: 4
+  
+
+    # prod:
+    #   type: bigquery
+    #   method: service-account
+    #   dataset: "{{ env_var('DBT_PROD_SCHEMA') }}"
+    #   project: "{{ env_var('GCP_PROD_PROJECT') }}"
+    #   threads: 4
+    #   keyfile: "{{ env_var('GCP_PROD_KEYFILE_PATH') }}"
